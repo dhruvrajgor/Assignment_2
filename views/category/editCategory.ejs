@@ -1,0 +1,29 @@
+ <div class="content">
+    <div class="animated fadeIn">
+        <div class="row">       
+
+            <div class="col-lg-6">
+            <div class="card">
+            <div class="card-header">
+                <strong>Update Category</strong>
+            </div>
+            <div class="card-body card-block">
+                <form action="/updateCategory/<%= categoryData.id %>/" method="post" class="form-horizontal">
+                    
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="text-input" value='<%= categoryData.name %>' name="catname" placeholder="Text" class="form-control" ></div>
+                    </div>
+                    <div class="form-actions form-group">
+                        <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+                        <button type="submit" class="btn btn-danger btn-sm"><a href="/listCategory">Cancel</a></button>
+                    </div>
+                </form>
+            </div>
+            
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</div>

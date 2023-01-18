@@ -1,0 +1,67 @@
+ <div class="content">
+    <div class="animated fadeIn">
+        <div class="row">       
+
+            <div class="col-lg-6">
+            <div class="card">
+            <div class="card-header">
+                <strong>Edit Blog</strong>
+            </div>
+            <div class="card-body card-block">
+                <form action="/updateBlog/<%= blogData.id %>/" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Title</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="text-input" value='<%= blogData.title %>' name="title" placeholder="Text" class="form-control" ></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Slug</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="text-input" value='<%= blogData.slug %>' name="slug" placeholder="Text" class="form-control" ></div>
+                    </div>
+                    
+                    
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
+                        <div class="col-12 col-md-9"><textarea name="description"  id="textarea-input" rows="9" placeholder="Content..." class="form-control"><%= blogData.description %></textarea></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class=" form-control-label">Category</label></div>
+                        <div class="col-12 col-md-9">
+                            <select name="catId" id="select" class="form-control">
+                                <option value="">Select Category</option>
+                                <% if(categorydata.length){
+                                for(var i = 0; i< categorydata.length; i++) {%> 
+                                <option value="<%= categorydata[i].id%>" <%= categorydata[i].id == blogData.catId ? 'selected' : ''%>>
+                                <%= categorydata[i].name%>
+                                </option>
+                                <% } } %>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Publish Date</label></div>
+                        <div class="col-12 col-md-9"><input type="date" id="text-input" value='<%= blogData.publish_date %>' name="publish_date" placeholder="Text" class="form-control" ></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="file-input" class=" form-control-label">Image</label></div>
+                        <div class="col-12 col-md-9"><input type="file" id="file-input" name="file" class="form-control-file">
+                        <br />
+                        <img src="/<%= blogData.img_url %>" width="100" />
+                        </div>
+                        <input type="hidden" name="old_image" value="<%= blogData.img_url %>" class="form-control-file">
+                    </div>
+                    <div class="form-actions form-group">
+                        <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+                        <button type="submit" class="btn btn-danger btn-sm"><a href="/listBlog">Cancel</a></button>
+                    </div>
+                </form>
+            </div>
+            
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</div>

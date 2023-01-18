@@ -1,0 +1,19 @@
+
+<h2 style="margin-left: 572px;">Blog Details</h2><br>
+
+<ul id="myUL">
+  <% if(blogsData2){
+                           
+   %>
+
+  <li style="margin-left: 572px;"><%= blogsData2.title%><br /><p><%= blogsData2.description %></p><br /><img src="/<%= blogsData2.img_url %>" width="100" /></li>
+  
+  <% 
+                                         
+   }else{ %>
+       <tr>
+          <td colspan="3">No Blogs</td>
+       </tr>
+    <% } %> 
+</ul>
+

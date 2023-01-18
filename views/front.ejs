@@ -1,0 +1,60 @@
+
+    <h2 style="margin-left: 572px;margin-top: 150px;">Blogs</h2><br>
+
+    <input type="text" id="myInput" style="margin-left: 572px;" onkeyup="myFunction()" placeholder="Search Blogs by Title" title="Type in a name">
+    
+    <section class="u-align-center u-clearfix u-section-1" id="sec-7b8a">
+      <div class="u-clearfix u-sheet u-sheet-1"><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+        <div class="u-blog u-repeater u-repeater-1" id="myUL"><!--blog_post-->
+          <% if(blogsData1.length){
+                           
+            for(var i = 0; i< blogsData1.length; i++) {%>
+          <div class="u-blog-post u-repeater-item">
+
+            <div class="u-container-layout u-similar-container u-valign-bottom-xs u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1"><!--blog_post_image-->
+              <img src="/<%= blogsData1[i].img_url %>" alt="" class="u-blog-control u-image u-image-default u-image-1"><!--/blog_post_image--><!--blog_post_header-->
+              <h2 class="u-blog-control u-text u-text-1">
+                <a class="u-post-header-link" href="/<%= blogsData1[i].slug %>"><!--blog_post_header_content--><%= blogsData1[i].title%><!--/blog_post_header_content--></a>
+              </h2><!--/blog_post_header--><!--blog_post_content-->
+              <div class="u-blog-control u-post-content u-text u-text-2"><!--blog_post_content_content--><%= blogsData1[i].description %><!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
+              
+              
+            </div>
+          </div><!--/blog_post--><!--blog_post-->
+          <% }
+                                         
+           }else{ %>
+               <tr>
+                  <td colspan="3">No Blogs</td>
+               </tr>
+            <% } %> 
+          
+        </div><!--/blog-->
+      </div>
+    </section>
+    
+    
+    
+    
+  
+<style>.u-disable-duration * {transition-duration: 0s !important;}</style>
+
+<script>
+// function myFunction() {
+//     var input, filter, ul, li, a, i, txtValue;
+//     input = document.getElementById("myInput");
+//     filter = input.value.toUpperCase();
+//     ul = document.getElementById("myUL");
+//     li = ul.getElementsByTagName("a");
+//     for (i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByTagName("a")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
+</script>
+
